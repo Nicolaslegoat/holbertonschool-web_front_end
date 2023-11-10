@@ -189,8 +189,8 @@ template {
     --color-light-grey: #f3f3f3;
     --color-dark-grey: #353535;
     --text-color: var(--color-black);
-    --font-family-base: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
-    --font-family-title: "Raleway", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+    --font-family-base: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-family-title: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
     --font-size-small: 1.2rem;
     --font-size-medium: 1.6rem;
     --font-size-large: 1.8rem;
@@ -218,10 +218,13 @@ template {
     --nav-item-display: inline-block;
     --nav-item-margin: 0 0 3rem 0;
     --nav-item-link-hover: var(--color-primary);
+    --section-tagline-margin: 0;
 }
-*, *:before, *:after {
+
+*, *::before, *::after {
     box-sizing: border-box;
 }
+
 html {
     scroll-behavior: smooth;
     font-size: 62.5%;
@@ -241,7 +244,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a:link {
-    color: #161616;
+    color: var(--text-color);
     text-decoration: none;
 }
 
@@ -271,7 +274,7 @@ a:active {
 
 .section-header {
     text-align: var(--section-header-align);
-    padding: var(--section-header-padding);    
+    padding: var(--section-header-padding);
 }
 
 .section-body {
@@ -295,12 +298,12 @@ a:active {
     color: var(--section-title-color);
 }
 
-.section-tagline
-{
+.section-tagline {
     color: var(--color-primary);
     font-family: var(--font-family-title);
     text-transform: var(--section-tagline-transform);
     font-weight: var(--font-weight-bold);
+    margin: var(--section-tagline-margin);
 }
 
 .container {
@@ -319,7 +322,6 @@ a:active {
     list-style: none;
     text-align: center;
 }
-
 
 .nav .nav-item {
     font-family: var(--nav-item-font-family);
@@ -340,9 +342,9 @@ a:active {
 }
 
 ul.row {
-    content: none;
-    display: table;
-    float: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .col-1-3 {
